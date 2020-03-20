@@ -1,0 +1,8 @@
+{
+    "/api/films/*": {
+        "target": "https://swapi.co",
+        "secure": false,
+        "logLevel": "debug",
+        "changeOrigin": true
+    }
+}

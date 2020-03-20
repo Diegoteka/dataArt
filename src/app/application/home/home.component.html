@@ -1,0 +1,19 @@
+<p-carousel [value]="films" [numVisible]="4" [numScroll]="3" [circular]="false" [responsiveOptions]="responsiveOptions" responsive="true">
+    <p-header>
+        <h3>PELICULAS DE STAR WARS</h3>
+    </p-header>
+    <ng-template let-car pTemplate="item">
+        <div class="car-details">
+            <div class="p-grid p-nogutter">
+                <div class="p-col-3 car-data">
+                        <div (click)="showInitialText(car.opening_crawl)" class="car-title"><a>Nombre:{{car.title}}</a></div>
+                        <div class="car-subtitle">Episodio:{{car.episode_id}}</div>
+                        <div class="car-director">Director:{{car.director}}</div>
+                        <button (click)="getCharacters(car.url)">Accede a los personajes de este film.</button>
+                </div>
+            </div>
+        </div>
+    </ng-template>
+</p-carousel>
+
+<router-outlet><router-outlet>

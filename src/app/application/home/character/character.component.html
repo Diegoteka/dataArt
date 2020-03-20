@@ -1,0 +1,19 @@
+<h1>Lista de Personajes</h1>
+
+
+<p-dataView #dv [value]="cars" [paginator]="true" [rows]="10" [filterBy]=sortKey>
+    <p-header>
+            <p-dropdown [options]="sortOptions" [(ngModel)]="sortKey" placeholder="Sort By" [style]="{'min-width':'140px'}"></p-dropdown>
+            <input type="search" size="30"  style='height:32px' pInputText placeholder="Buscar"  (input)="dv.filter($event.target.value, 'contains')">
+    </p-header>
+    <ng-template let-car pTemplate="listItem">
+        <hr>
+        <div class="ui-g" style="border-bottom: 1px solid #d9dad9;">
+            <div class="ui-g-12">Nombre: <b>{{car.name}}</b></div>
+            <div class="ui-g-12">Color Ojos: <b>{{car.eye_color}}</b></div>
+            <div class="ui-g-12">Genero: <b>{{car.gender}}</b></div>
+            <div class="ui-g-12">Peliculas: <b>{{car.films}}</b></div>
+        </div>
+        <hr>
+    </ng-template>
+</p-dataView>
